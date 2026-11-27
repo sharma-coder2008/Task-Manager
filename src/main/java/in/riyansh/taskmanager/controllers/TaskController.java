@@ -52,6 +52,10 @@ public class TaskController
     @ExceptionHandler(ParseException.class)
     public ResponseEntity<ErrorResponseDTO> handleErrors(ParseException e)
     {
-        return ResponseEntity.badRequest().body(e.getMessage());
+        if(e instanceof ParseException)
+        {
+            return ResponseEntity.badRequest().body(new ErrorResponseDTO("Invalid Date Format"));
+        }
+        return ResponseEntity.internalServerError().body(new ErrorResponseDTO("Internal Server Error"));
     }
 }
