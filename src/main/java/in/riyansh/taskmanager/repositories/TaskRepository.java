@@ -1,4 +1,6 @@
 package in.riyansh.taskmanager.repositories;
 
-public class TaskRepository {
+public class TaskRepository
+{
+    
 }
