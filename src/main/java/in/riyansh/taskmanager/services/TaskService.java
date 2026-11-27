@@ -12,7 +12,7 @@ public class TaskService
     private ArrayList<TaskEntity> tasks = new ArrayList<>();
     private int taskId = 1;
 
-    public void addTask(String title, String description, String deadline, boolean completed)
+    public TaskEntity addTask(String title, String description, String deadline, boolean completed)
     {
         TaskEntity te = new TaskEntity();
         te.setId(taskId);
