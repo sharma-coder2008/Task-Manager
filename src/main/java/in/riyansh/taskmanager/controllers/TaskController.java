@@ -48,4 +48,10 @@ public class TaskController
         taskService.addTask(body.getTitle(), body.getDescription(), body.getDeadline(), body.completed);
         return ResponseEntity.ok().build();
     }
+
+    @ExceptionHandler(ParseException.class)
+    public ResponseEntity<String> handleParseException(ParseException e)
+    {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
 }
