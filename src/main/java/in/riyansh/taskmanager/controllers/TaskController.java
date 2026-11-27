@@ -56,8 +56,7 @@ public class TaskController
         {
             return ResponseEntity.notFound().build();
         }
-        taskService.addTask(body.getTitle(), body.getDescription(), body.getDeadline(), body.completed);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(task);
     }
 
     @ExceptionHandler(Exception.class)
