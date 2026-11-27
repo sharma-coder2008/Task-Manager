@@ -43,4 +43,17 @@ public class TaskService
         }
         return null;
     }
+
+    public TaskEntity updateTaskById(int id, String title, String description, String deadline, boolean completed) throws ParseException {
+        TaskEntity task = getTaskById(id);
+        if(task == null)
+        {
+            return null;
+        }
+        task.setTitle(title);
+        task.setDescription(description);
+        task.setDeadline(deadlineFormatter.parse(deadline));
+        task.setCompleted(completed);
+        return task;
+    }
 }
