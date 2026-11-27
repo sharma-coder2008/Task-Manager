@@ -22,6 +22,7 @@ public class TaskService
         te.setCompleted(completed);
         taskId++;
         tasks.add(te);
+        return te;
     }
 
     public ArrayList<TaskEntity> getTasks()
