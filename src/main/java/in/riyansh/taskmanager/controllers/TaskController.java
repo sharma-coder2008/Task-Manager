@@ -49,6 +49,17 @@ public class TaskController
         return ResponseEntity.ok().build();
     }
 
+    @PutMapping("/{myId}")
+    public ResponseEntity<TaskEntity> modifyTaskById(@PathVariable Integer myId, @RequestBody CreateTaskDTO body) throws ParseException {
+        var task = taskService.getTaskById(myId);
+        if(task == null)
+        {
+            return ResponseEntity.notFound().build();
+        }
+        taskService.addTask(body.getTitle(), body.getDescription(), body.getDeadline(), body.completed);
+        return ResponseEntity.ok().build();
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDTO> handleErrors(ParseException e)
     {
