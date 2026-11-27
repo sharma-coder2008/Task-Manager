@@ -50,7 +50,7 @@ public class TaskController
     }
 
     @ExceptionHandler(ParseException.class)
-    public ResponseEntity<String> handleParseException(ParseException e)
+    public ResponseEntity<ErrorResponseDTO> handleErrors(ParseException e)
     {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
