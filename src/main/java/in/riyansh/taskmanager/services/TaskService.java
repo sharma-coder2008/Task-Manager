@@ -18,7 +18,7 @@ public class TaskService
         te.setId(taskId);
         te.setTitle(title);
         te.setDescription(description);
-        te.setDeadline(new Date(deadline));
+        //te.setDeadline(new Date(deadline));
         te.setCompleted(completed);
         taskId++;
         tasks.add(te);
