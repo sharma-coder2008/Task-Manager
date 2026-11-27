@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class TaskService
 {
     private ArrayList<TaskEntity> tasks = new ArrayList<>();
+    private final SimpleDateFormat deadlineFormatter = new SimpleDateFormat("YYYY-MM-DD");
     private int taskId = 1;
 
     public TaskEntity addTask(String title, String description, String deadline, boolean completed)
