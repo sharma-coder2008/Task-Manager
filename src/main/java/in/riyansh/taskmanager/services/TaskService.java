@@ -23,3 +23,21 @@ public class TaskService
         taskId++;
         tasks.add(te);
     }
+
+    public ArrayList<TaskEntity> getTasks()
+    {
+        return  tasks;
+    }
+
+    public TaskEntity getTaskById(int id)
+    {
+        for(TaskEntity task: tasks)
+        {
+            if(task.getId()==id)
+            {
+                return task;
+            }
+        }
+        return null;
+    }
+}
