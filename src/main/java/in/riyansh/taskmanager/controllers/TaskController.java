@@ -43,7 +43,7 @@ public class TaskController
     }
 
     @PostMapping
-    public ResponseEntity<TaskEntity> addTasks(@RequestBody CreateTaskDTO body)
+    public ResponseEntity<TaskEntity> addTasks(@RequestBody CreateTaskDTO body) throws ParseException
     {
         taskService.addTask(body.getTitle(), body.getDescription(), body.getDeadline(), body.completed);
         return ResponseEntity.ok().build();
