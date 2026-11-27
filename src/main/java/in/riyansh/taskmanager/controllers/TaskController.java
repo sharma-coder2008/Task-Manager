@@ -56,6 +56,7 @@ public class TaskController
         {
             return ResponseEntity.badRequest().body(new ErrorResponseDTO("Invalid Date Format"));
         }
+        e.printStackTrace();
         return ResponseEntity.internalServerError().body(new ErrorResponseDTO("Internal Server Error"));
     }
 }
