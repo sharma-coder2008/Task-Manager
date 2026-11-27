@@ -14,7 +14,7 @@ public class TaskService
     private final SimpleDateFormat deadlineFormatter = new SimpleDateFormat("YYYY-MM-DD");
     private int taskId = 1;
 
-    public TaskEntity addTask(String title, String description, String deadline, boolean completed)
+    public TaskEntity addTask(String title, String description, String deadline, boolean completed) throws ParseException
     {
         TaskEntity te = new TaskEntity();
         te.setId(taskId);
