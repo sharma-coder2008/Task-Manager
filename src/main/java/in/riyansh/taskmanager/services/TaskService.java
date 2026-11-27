@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Date;
 
-@Repository
+@Service
 public class TaskService
 {
     private ArrayList<TaskEntity> tasks = new ArrayList<>();
